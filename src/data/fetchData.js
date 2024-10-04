@@ -24,14 +24,15 @@ async function getJobs(page, q = null) {
 }
 
 async function getJob(id) {
-  const promise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve) => {
     setTimeout(() => {
       resolve();
     }, 100);
   });
   await promise;
 
-  return jobs.find((job) => job.id == id);
+  return jobs.find((job) => job.id === id);
 }
 
-export default { getJobs, getJob };
+const JobService = { getJobs, getJob };
+export default JobService;
